@@ -18,21 +18,6 @@
       <Extensions>qrc;*</Extensions>
       <ParseFiles>false</ParseFiles>
     </Filter>
-    <Filter Include="Generated Files">
-      <UniqueIdentifier>{71ED8ED8-ACB9-4CE9-BBE1-E00B30144E11}</UniqueIdentifier>
-      <Extensions>moc;h;cpp</Extensions>
-      <SourceControlFiles>False</SourceControlFiles>
-    </Filter>
-    <Filter Include="Generated Files\Debug">
-      <UniqueIdentifier>{6d133449-2cf7-426c-a99d-bf4676a3781c}</UniqueIdentifier>
-      <Extensions>cpp;moc</Extensions>
-      <SourceControlFiles>False</SourceControlFiles>
-    </Filter>
-    <Filter Include="Generated Files\Release">
-      <UniqueIdentifier>{df92fb02-68f7-4428-8f74-d7dfc0a54f50}</UniqueIdentifier>
-      <Extensions>cpp;moc</Extensions>
-      <SourceControlFiles>False</SourceControlFiles>
-    </Filter>
     <Filter Include="login">
       <UniqueIdentifier>{45269305-0d90-40b7-bac5-537ed2a10d2a}</UniqueIdentifier>
     </Filter>
@@ -45,6 +30,24 @@
     <Filter Include="Source Files\General">
       <UniqueIdentifier>{707cb587-2947-4fe1-be39-5d2280bda1da}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Master">
+      <UniqueIdentifier>{64033c9b-2aad-4acb-b268-4603cb7563ab}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="chatCenter\Generated Files">
+      <UniqueIdentifier>{71ED8ED8-ACB9-4CE9-BBE1-E00B30144E11}</UniqueIdentifier>
+      <Extensions>moc;h;cpp</Extensions>
+      <SourceControlFiles>False</SourceControlFiles>
+    </Filter>
+    <Filter Include="chatCenter\Generated Files\Debug">
+      <UniqueIdentifier>{6d133449-2cf7-426c-a99d-bf4676a3781c}</UniqueIdentifier>
+      <Extensions>cpp;moc</Extensions>
+      <SourceControlFiles>False</SourceControlFiles>
+    </Filter>
+    <Filter Include="chatCenter\Generated Files\Release">
+      <UniqueIdentifier>{df92fb02-68f7-4428-8f74-d7dfc0a54f50}</UniqueIdentifier>
+      <Extensions>cpp;moc</Extensions>
+      <SourceControlFiles>False</SourceControlFiles>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -54,58 +57,58 @@
       <Filter>login</Filter>
     </ClCompile>
     <ClCompile Include="GeneratedFiles\Debug\moc_login.cpp">
-      <Filter>Generated Files\Debug</Filter>
+      <Filter>chatCenter\Generated Files\Debug</Filter>
     </ClCompile>
     <ClCompile Include="GeneratedFiles\Release\moc_login.cpp">
-      <Filter>Generated Files\Release</Filter>
+      <Filter>chatCenter\Generated Files\Release</Filter>
     </ClCompile>
     <ClCompile Include="GeneratedFiles\Debug\moc_chatWidget.cpp">
-      <Filter>Generated Files\Debug</Filter>
+      <Filter>chatCenter\Generated Files\Debug</Filter>
     </ClCompile>
     <ClCompile Include="GeneratedFiles\Release\moc_chatWidget.cpp">
-      <Filter>Generated Files\Release</Filter>
+      <Filter>chatCenter\Generated Files\Release</Filter>
     </ClCompile>
     <ClCompile Include="chatCenter\chatWidget.cpp">
       <Filter>chatCenter</Filter>
     </ClCompile>
     <ClCompile Include="GeneratedFiles\Debug\moc_person.cpp">
-      <Filter>Generated Files\Debug</Filter>
+      <Filter>chatCenter\Generated Files\Debug</Filter>
     </ClCompile>
     <ClCompile Include="GeneratedFiles\Release\moc_person.cpp">
-      <Filter>Generated Files\Release</Filter>
+      <Filter>chatCenter\Generated Files\Release</Filter>
     </ClCompile>
     <ClCompile Include="chatCenter\person.cpp">
       <Filter>chatCenter</Filter>
     </ClCompile>
     <ClCompile Include="GeneratedFiles\Debug\moc_chatCenter.cpp">
-      <Filter>Generated Files\Debug</Filter>
+      <Filter>chatCenter\Generated Files\Debug</Filter>
     </ClCompile>
     <ClCompile Include="GeneratedFiles\Release\moc_chatCenter.cpp">
-      <Filter>Generated Files\Release</Filter>
+      <Filter>chatCenter\Generated Files\Release</Filter>
     </ClCompile>
     <ClCompile Include="chatCenter\chatCenter.cpp">
       <Filter>chatCenter</Filter>
     </ClCompile>
     <ClCompile Include="GeneratedFiles\Debug\moc_chatGroup.cpp">
-      <Filter>Generated Files\Debug</Filter>
+      <Filter>chatCenter\Generated Files\Debug</Filter>
     </ClCompile>
     <ClCompile Include="GeneratedFiles\Release\moc_chatGroup.cpp">
-      <Filter>Generated Files\Release</Filter>
+      <Filter>chatCenter\Generated Files\Release</Filter>
     </ClCompile>
     <ClCompile Include="chatCenter\chatGroup.cpp">
       <Filter>chatCenter</Filter>
     </ClCompile>
     <ClCompile Include="GeneratedFiles\Debug\moc_CompleteLineEdit.cpp">
-      <Filter>Generated Files\Debug</Filter>
+      <Filter>chatCenter\Generated Files\Debug</Filter>
     </ClCompile>
     <ClCompile Include="GeneratedFiles\Release\moc_CompleteLineEdit.cpp">
-      <Filter>Generated Files\Release</Filter>
+      <Filter>chatCenter\Generated Files\Release</Filter>
     </ClCompile>
     <ClCompile Include="GeneratedFiles\Debug\moc_LineEditWithButton.cpp">
-      <Filter>Generated Files\Debug</Filter>
+      <Filter>chatCenter\Generated Files\Debug</Filter>
     </ClCompile>
     <ClCompile Include="GeneratedFiles\Release\moc_LineEditWithButton.cpp">
-      <Filter>Generated Files\Release</Filter>
+      <Filter>chatCenter\Generated Files\Release</Filter>
     </ClCompile>
     <ClCompile Include="General\CompleteLineEdit.cpp">
       <Filter>Source Files\General</Filter>
@@ -114,26 +117,56 @@
       <Filter>Source Files\General</Filter>
     </ClCompile>
     <ClCompile Include="GeneratedFiles\qrc_res.cpp">
-      <Filter>Generated Files</Filter>
+      <Filter>chatCenter\Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="VideoVM\interviewWidget.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Debug\moc_interviewWidget.cpp">
+      <Filter>chatCenter\Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_interviewWidget.cpp">
+      <Filter>chatCenter\Generated Files\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="General\ReadFileContent.cpp">
+      <Filter>Source Files\General</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Debug\moc_MasterController.cpp">
+      <Filter>chatCenter\Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_MasterController.cpp">
+      <Filter>chatCenter\Generated Files\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="Master\RecvThread.cpp">
+      <Filter>Master</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Debug\moc_RecvThread.cpp">
+      <Filter>chatCenter\Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_RecvThread.cpp">
+      <Filter>chatCenter\Generated Files\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="Master\SendThread.cpp">
+      <Filter>Master</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Debug\moc_SendThread.cpp">
+      <Filter>chatCenter\Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_SendThread.cpp">
+      <Filter>chatCenter\Generated Files\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="Master\MasterController.cpp">
+      <Filter>Master</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="login\login.h">
       <Filter>login</Filter>
     </CustomBuild>
-    <CustomBuild Include="login\login.ui">
-      <Filter>login</Filter>
-    </CustomBuild>
     <CustomBuild Include="chatCenter\chatWidget.h">
       <Filter>chatCenter</Filter>
     </CustomBuild>
-    <CustomBuild Include="chatCenter\chatWidget.ui">
-      <Filter>chatCenter</Filter>
-    </CustomBuild>
     <CustomBuild Include="chatCenter\person.h">
-      <Filter>chatCenter</Filter>
-    </CustomBuild>
-    <CustomBuild Include="chatCenter\person.ui">
       <Filter>chatCenter</Filter>
     </CustomBuild>
     <CustomBuild Include="chatCenter\chatCenter.h">
@@ -151,19 +184,49 @@
     <CustomBuild Include="res.qrc">
       <Filter>Resource Files</Filter>
     </CustomBuild>
+    <CustomBuild Include="login\login.ui">
+      <Filter>Form Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="chatCenter\chatWidget.ui">
+      <Filter>Form Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="chatCenter\person.ui">
+      <Filter>Form Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="VideoVM\interviewWidget.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="VideoVM\interviewWidget.ui">
+      <Filter>Form Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="Master\RecvThread.h">
+      <Filter>Master</Filter>
+    </CustomBuild>
+    <CustomBuild Include="Master\SendThread.h">
+      <Filter>Master</Filter>
+    </CustomBuild>
+    <CustomBuild Include="Master\MasterController.h">
+      <Filter>Master</Filter>
+    </CustomBuild>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GeneratedFiles\ui_login.h">
-      <Filter>Generated Files</Filter>
+      <Filter>chatCenter\Generated Files</Filter>
     </ClInclude>
     <ClInclude Include="GeneratedFiles\ui_chatWidget.h">
-      <Filter>Generated Files</Filter>
+      <Filter>chatCenter\Generated Files</Filter>
     </ClInclude>
     <ClInclude Include="GeneratedFiles\ui_person.h">
-      <Filter>Generated Files</Filter>
+      <Filter>chatCenter\Generated Files</Filter>
     </ClInclude>
     <ClInclude Include="resource.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GeneratedFiles\ui_interviewWidget.h">
+      <Filter>chatCenter\Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="General\ReadFileContent.h">
+      <Filter>Header Files\General</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

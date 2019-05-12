@@ -98,6 +98,11 @@ void chatGroup::setFriendOnlineNum(int num)
 	update();
 }
 
+QString chatGroup::getText()
+{
+	return this->m_titleText;
+}
+
 int chatGroup::rotation()
 {
 	return this->m_rotation;

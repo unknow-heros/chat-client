@@ -7,14 +7,12 @@
 #include <QMouseEvent>
 
 #include <QDebug>
-
+#include <qheaderview.h>
 
 
 chatCenter::chatCenter(QWidget *parent)
 	: QTreeWidget(parent)
 {
-
-	
 
 	this->setExpandsOnDoubleClick(false);	//关闭双击展开
 	this->header()->setVisible(false);		//关闭标题
@@ -94,6 +92,8 @@ void chatCenter::connectInit()
 	connect(m_rename,   &QAction::triggered, this, &chatCenter::slotRename  );	//重命名组
 	connect(m_addBuddy, &QAction::triggered, this, &chatCenter::slotAddBuddy);	//添加好友
 	connect(m_delBuddy, &QAction::triggered, this, &chatCenter::slotDelBuddy);	//删除好友
+
+	connect(this, &QTreeWidget::itemClicked, this, &chatCenter::slotClickFriend);  //点击好友
 }
 
 void chatCenter::mousePressEvent(QMouseEvent *event)
@@ -102,6 +102,9 @@ void chatCenter::mousePressEvent(QMouseEvent *event)
 	//让QSS起效，因为QSS基于父类QListWidget，子类就是子窗口，就是最上层窗口
 	//是覆盖在父窗口上的，所以先于父窗口捕获消息
 	QTreeWidget::mousePressEvent(event);
+
+
+
 
 	//获取鼠标位置的Item
 	currentItem = this->itemAt(mapFromGlobal(QCursor::pos()));
@@ -113,10 +116,10 @@ void chatCenter::mousePressEvent(QMouseEvent *event)
 		{
 			//遍历组的对应的项（包括自身和好友）
 			foreach(QTreeWidgetItem* subItem, m_groupMap.keys(currentItem))
-				if (subItem != currentItem)
-				{
-					subItem->setHidden(false);				//好友全部显示
-				}
+			if (subItem != currentItem)
+			{
+				subItem->setHidden(false);				//好友全部显示
+			}
 			this->m_isHideMap.insert(currentItem, false);	//该组设置为显示状态
 			qDebug() << "zhangkai";
 			currentItem->setExpanded(true);
@@ -127,10 +130,10 @@ void chatCenter::mousePressEvent(QMouseEvent *event)
 		{
 			//遍历组的对应的项（包括自身和好友）
 			foreach(QTreeWidgetItem* subItem, m_groupMap.keys(currentItem))
-				if (subItem != currentItem)
-				{
-					subItem->setHidden(true);				//好友全部显示
-				}
+			if (subItem != currentItem)
+			{
+				subItem->setHidden(true);				//好友全部显示
+			}
 			this->m_isHideMap.insert(currentItem, true);            //设置该组为隐藏状态
 			qDebug() << "yingcang";
 			currentItem->setExpanded(false);
@@ -139,6 +142,28 @@ void chatCenter::mousePressEvent(QMouseEvent *event)
 		}	 
 	}
 }
+
+//双击事件
+void chatCenter::mouseDoubleClickEvent(QMouseEvent*event)
+{
+
+	// 如果不调用基类mousePressEvent，item被select会半天不响应,调用父类，
+	//让QSS起效，因为QSS基于父类QListWidget，子类就是子窗口，就是最上层窗口
+	//是覆盖在父窗口上的，所以先于父窗口捕获消息
+	QTreeWidget::mouseDoubleClickEvent(event);
+	//获取鼠标位置的Item
+	currentItem = this->itemAt(mapFromGlobal(QCursor::pos()));
+
+	//如果双击击的左键 并且是点击的是好友
+	if (event->button() == Qt::LeftButton && currentItem != NULL && currentItem != this->m_groupMap.value(currentItem))
+	{
+		person * tmp = dynamic_cast<person*>(this->itemWidget(currentItem, 0));
+		qDebug() << tmp->getUserName();
+	}
+}
+
+
+
 
 //菜单事件
 void chatCenter::contextMenuEvent(QContextMenuEvent * event)
@@ -174,8 +199,10 @@ void chatCenter::friendListInit(QStringList friendList, int listNum)
 		pRootFriendItem->setData(0, Qt::UserRole, 0);
 
 		chatGroup *pItemName = new chatGroup(this);
-		QString qsGroupName = QString::fromLocal8Bit("%1 %2/%3").arg(friendList.at(i)).arg(0).arg(5);
+		QString qsGroupName = QString::fromLocal8Bit("%1").arg(friendList.at(i));
 		pItemName->setText(qsGroupName);
+		pItemName->setFriendNum(5);
+		pItemName->setFriendOnlineNum(1);
 
 
 		this->addTopLevelItem(pRootFriendItem);
@@ -302,6 +329,22 @@ void chatCenter::slotRename()
 void chatCenter::slotRenameEditFshed()
 {
 
+}
+
+void chatCenter::slotClickFriend(QTreeWidgetItem* item, int num)
+{
+	
+	if (item == m_groupMap[item])
+	{
+		chatGroup * tmp = dynamic_cast<chatGroup*>(this->itemWidget(currentItem, 0));
+		qDebug() << tmp->getText();
+		//tmp->setText("llll");
+	}
+	else {
+		person *p = dynamic_cast<person*>(this->itemWidget(item, 0));
+		qDebug() << p->getUserName();
+		//p->setUserName("ahah");
+	}	
 }
 
 void chatCenter::onItemExpanded(QTreeWidgetItem * item)

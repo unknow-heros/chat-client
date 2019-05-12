@@ -30,3 +30,8 @@ void person::setHeadImage(const QString & head)
 	ui->btn_head->setIcon(QIcon(this->m_headFile));
 	ui->btn_head->setIconSize(QSize(42, 42));
 }
+
+QString person::getUserName()
+{
+	return this->m_uName;
+}

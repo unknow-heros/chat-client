@@ -2,18 +2,32 @@
 #define CHATWIDGET_H
 
 #include <QWidget>
-#include "ui_chatWidget.h"
+
+namespace Ui {
+	class chatWidget;
+}
 
 class chatWidget : public QWidget
 {
 	Q_OBJECT
 
 public:
-	chatWidget(QWidget *parent = 0);
+	explicit chatWidget(QWidget *parent = nullptr);
 	~chatWidget();
 
+public:
+	void connectInit();
+	
+public slots:
+	void switchWin();
+
+
 private:
-	Ui::chatWidget ui;
+	Ui::chatWidget *ui;
+
+signals:
+	void interviewShow();
+
 };
 
 #endif // CHATWIDGET_H

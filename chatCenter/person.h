@@ -15,6 +15,8 @@ public:
 	void setUserName(const QString& uName);			//设置昵称
 	void setSignName(const QString& sName);			//设置个性签名
 	void setHeadImage(const QString & head);		//设置头像
+
+	QString getUserName();
 private:
 	QString m_headFile;		//用户头像
 	QString m_uName;		//用户名称						

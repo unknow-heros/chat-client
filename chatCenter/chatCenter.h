@@ -6,6 +6,9 @@
 
 #include "person.h"
 
+#include <QVector>
+class chatGroup;
+
 
 
 class chatCenter : public QTreeWidget
@@ -13,12 +16,13 @@ class chatCenter : public QTreeWidget
 	Q_OBJECT
 
 public:
-	explicit chatCenter(QWidget *parent);
+	explicit chatCenter(QWidget *parent = nullptr); 
 	~chatCenter();
 public:
 	void menuInit();													//初始化菜单
 	void connectInit();													//初始化信号槽
 	void mousePressEvent(QMouseEvent *event);							//鼠标按下事件
+	void mouseDoubleClickEvent(QMouseEvent*event);							//鼠标双击事件
 	void contextMenuEvent(QContextMenuEvent * event);					//菜单事件
 
 	void friendListInit(QStringList friendList, int listNum);			//初始化好友列表
@@ -42,6 +46,8 @@ public slots:
 	void slotRename();					//重命名组
 	void slotRenameEditFshed();			//命名完成
 
+	void slotClickFriend(QTreeWidgetItem*, int);		//点击好友
+
 
 private:
 	QMap<QTreeWidgetItem*, bool> m_isHideMap;				//用来判断该组是否隐藏了
@@ -62,6 +68,12 @@ private:
 	void onItemExpanded(QTreeWidgetItem * item);
 	void onItemCollapsed(QTreeWidgetItem * item);
 	void onItemClicked(QTreeWidgetItem * item, int column);
+
+	 QMap< chatGroup* ,QList<person*>> m_listFriend;
+	
+
+signals:
+	
 
 };
 

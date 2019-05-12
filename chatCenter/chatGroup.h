@@ -20,6 +20,8 @@ public:
 	void setFriendNum(int num);					//设置好友数量
 	void setFriendOnlineNum(int num);			//设置好友在线数量
 
+	QString getText();
+
 private:
 	void paintEvent(QPaintEvent * event);		//绘图事件	
 	int rotation();				
